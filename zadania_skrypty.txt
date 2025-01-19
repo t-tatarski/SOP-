@@ -1,0 +1,8 @@
+Polecenie, ktore liczy liczbe znakow w pierwszych pieciu liniach pliku
+ i usuwa z nich kropki:
+cat pliktextowy.txt | sed '1,5s/\.//g' | head -n 5 | wc -c
+
+polecenie ktore wypisze linie od 3 do 6 pliku:
+
+head -n 6 pliktekstowy.txt | tail -n 4
+
