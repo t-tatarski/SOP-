@@ -9,7 +9,7 @@ if [ ! -d "$1" ]; then
   echo "nie podano katalogu"
 exit 1
 fi
+ls -l "$1" | grep "^d" | awk '{print $NF}'
 
-find "$1" -mindepth 1 -maxdepth 1 -type d -print
-
+find "$1" -type f | grep ".txt$" | xargs rm -v
 
