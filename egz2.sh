@@ -13,5 +13,10 @@ exit 2
 fi
 
 echo "katalogi w znalezionym pliku typu sqq"
-echo "$dirs"
+echo "$1"
 
+while IFS= read -r katalog; do
+
+ls "$katalog"
+
+done < "$1"
