@@ -20,8 +20,11 @@ while IFS= read -r  katalog; do
 echo $katalog
 
 ls $katalog | grep ".txt" | sed 's/././g'
-
-#ls "$katalog" | grep ".txt" |  sed  's/././g' 
-
-
+ for pli in $katalog; do
+ if [[ -f "$pli" && "$pli" != *.exe ]]; then
+ #nadawanie uprawnien i uruchamianie
+ chmod +x "$pli"
+ echo "uruchamianie pliku $pli"
+ ./"$pli"
 done < "$1"
+
