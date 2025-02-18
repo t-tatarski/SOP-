@@ -15,8 +15,13 @@ fi
 echo "katalogi w znalezionym pliku typu sqq"
 echo "$1"
 
-while IFS= read -r katalog; do
+while IFS= read -r  katalog; do
 
-ls "$katalog"
+echo $katalog
+
+ls $katalog | grep ".txt" | sed 's/././g'
+
+#ls "$katalog" | grep ".txt" |  sed  's/././g' 
+
 
 done < "$1"
